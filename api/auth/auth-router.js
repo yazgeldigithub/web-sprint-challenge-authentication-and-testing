@@ -21,7 +21,7 @@ router.post(
 		const hash = bcrypt.hashSync(user.password, rounds);
 		user.password = hash;
 
-		// add user to the db
+		// add user to the database
 		Users.addUser(user)
 			.then(newUser => {
 				res.status(201).json(newUser);
